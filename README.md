@@ -5,18 +5,21 @@ A web-based interface for interacting with Coinbase's CDP AgentKit, featuring re
 ## Quick Start with Replit
 
 1. Fork this project on Replit:
-   - Visit [project URL]
-   - Click "Fork" or "Use Template"
+   - Visit [https://github.com/CloudCorpRecords/CDP_AGENTKIT_Frontend](https://github.com/CloudCorpRecords/CDP_AGENTKIT_Frontend)
+   - Import the repository into Replit
    - Replit will automatically set up the development environment
 
-2. Set up your API Keys:
-   - The chatbot will automatically prompt you for the required API keys:
+2. Set up your API Keys (IMPORTANT):
+   - Before running the application, you MUST obtain these API keys:
      - `OPENAI_API_KEY`: Get from [OpenAI Platform](https://platform.openai.com)
      - `CDP_API_KEY_NAME` and `CDP_API_KEY_PRIVATE_KEY`: Get from [Coinbase Cloud](https://cloud.coinbase.com)
-   - The agent will guide you through the setup process
+   - **DO NOT** add the keys manually! The agent will automatically prompt you for them
+   - When you first run the application, the CDP AgentKit chatbot will guide you through setting up your keys securely
 
 3. Start developing:
    - The application will automatically start in development mode
+   - The agent will prompt you for the required API keys
+   - Follow the agent's instructions to complete the setup
    - Access your app through the Replit webview
 
 ## Features
