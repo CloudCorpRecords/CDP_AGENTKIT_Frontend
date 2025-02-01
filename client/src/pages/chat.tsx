@@ -55,6 +55,8 @@ export default function Chat() {
         timestamp: new Date(msg.timestamp)
       };
       setMessages(prev => [...prev, msgWithDate]);
+      // Reset loading state after receiving a message
+      setIsLoading(false);
     });
 
     newSocket.on("error", (error: string) => {
@@ -75,7 +77,7 @@ export default function Chat() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!input.trim() || !socket || !isConnected) return;
+    if (!input.trim() || !socket || !isConnected || isLoading) return;
 
     setIsLoading(true);
     const message: Message = {
