@@ -5,8 +5,8 @@ A web-based interface for interacting with Coinbase's CDP AgentKit, featuring re
 ## Quick Start with Replit
 
 1. Fork this project on Replit:
-   - Visit [https://github.com/CloudCorpRecords/CDP_AGENTKIT_Frontend](https://github.com/CloudCorpRecords/CDP_AGENTKIT_Frontend)
-   - Import the repository into Replit
+   - Visit [https://replit.com/@CloudCorpRecord/Coinbase-x-Agent-Kit?v=1](https://replit.com/@CloudCorpRecord/Coinbase-x-Agent-Kit?v=1)
+   - Click "Fork" to create your own copy
    - Replit will automatically set up the development environment
 
 2. Set up your API Keys (IMPORTANT):
