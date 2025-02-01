@@ -4,7 +4,7 @@ type Message = {
   id: string;
   content: string;
   type: "user" | "agent" | "tool";
-  timestamp: Date;
+  timestamp: string | Date;
 };
 
 interface MessageListProps {

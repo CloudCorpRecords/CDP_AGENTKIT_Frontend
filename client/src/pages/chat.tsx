@@ -14,7 +14,7 @@ type Message = {
   id: string;
   content: string;
   type: "user" | "agent" | "tool";
-  timestamp: Date;
+  timestamp: string | Date;
 };
 
 export default function Chat() {
@@ -49,7 +49,12 @@ export default function Chat() {
     });
 
     newSocket.on("message", (msg: Message) => {
-      setMessages(prev => [...prev, msg]);
+      // Ensure timestamp is a Date object
+      const msgWithDate = {
+        ...msg,
+        timestamp: new Date(msg.timestamp)
+      };
+      setMessages(prev => [...prev, msgWithDate]);
     });
 
     newSocket.on("error", (error: string) => {

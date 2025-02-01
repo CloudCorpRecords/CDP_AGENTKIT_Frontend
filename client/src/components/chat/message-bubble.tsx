@@ -4,12 +4,15 @@ import { Card } from "@/components/ui/card";
 interface MessageBubbleProps {
   content: string;
   type: "user" | "agent" | "tool";
-  timestamp: Date;
+  timestamp: string | Date;
 }
 
 export default function MessageBubble({ content, type, timestamp }: MessageBubbleProps) {
   const isUser = type === "user";
-  
+  const timeString = timestamp instanceof Date 
+    ? timestamp.toLocaleTimeString()
+    : new Date(timestamp).toLocaleTimeString();
+
   return (
     <div className={cn(
       "flex flex-col gap-1 mb-4",
@@ -23,7 +26,7 @@ export default function MessageBubble({ content, type, timestamp }: MessageBubbl
         {content}
       </Card>
       <span className="text-xs text-muted-foreground">
-        {timestamp.toLocaleTimeString()}
+        {timeString}
       </span>
     </div>
   );
