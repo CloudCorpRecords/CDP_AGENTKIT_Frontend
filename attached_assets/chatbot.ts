@@ -62,7 +62,7 @@ const WALLET_DATA_FILE = "wallet_data.txt";
  *
  * @returns Agent executor and config
  */
-async function initializeAgent() {
+export async function initializeAgent() {
   try {
     // Initialize LLM
     const llm = new ChatOpenAI({
@@ -288,7 +288,8 @@ async function main() {
   }
 }
 
-if (require.main === module) {
+// Replace CommonJS module check with ESM module check
+if (import.meta.url === import.meta.resolve("./chatbot.ts")) {
   console.log("Starting Agent...");
   main().catch(error => {
     console.error("Fatal error:", error);
